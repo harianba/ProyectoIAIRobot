@@ -1,4 +1,5 @@
-ProyectoIAIRobot
+Proyecto Primer Parcial
+<br>Topicos Inteligencia Artificial
 ================
-
-Proyecto Topicos Inteligecnia Artificial. Reconocimiento de objetos y el uso del Irobot
+ 
+<p>Reconocimiento de objetos y el uso del Irobot
