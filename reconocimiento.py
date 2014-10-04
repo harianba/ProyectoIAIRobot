@@ -110,7 +110,7 @@ def reconoce(lower_re, upper_re, lower_gree, upper_gree, lower_ble, upper_ble):
                 serialCom("1") #Se detiene
                 return mask
             else:
-                serialCom("3")
+                serialCom("3")#Avanza
         else:
             #serialCom("3")
             print "No hay rojo :v"
