@@ -70,7 +70,7 @@ def areaRed(img):
 
 
 def reconoce(lower_re, upper_re, lower_gree, upper_gree, lower_ble, upper_ble):
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     while(1):
 
@@ -100,19 +100,22 @@ def reconoce(lower_re, upper_re, lower_gree, upper_gree, lower_ble, upper_ble):
         d = areaRed(mask)
         if d > 8000: # 25724 es el numero de pixeles en el area central
             print 'Detecto rojo'
+            #serialCom("1")
             #serialCom("3") # Manda  2 para indicar al robot que se detenga al encontrar el objeto rojo que debera agarrar
             #sleep(20)
             if greenArea > 10000000:
                 #serialCom("1") # Manda 1 para indicar al robot que se mueva mientras se encuentra en el area de trabajo
-                #sleep()
                 print 'Encontre rojo y esta en el area'
                 cv2.destroyAllWindows()
-                serialCom("3") #Gira hasta encontrar su area de trabajo otra vez
+                serialCom("1") #Se detiene
                 return mask
+            else:
+                serialCom("3")
         else:
+            #serialCom("3")
             print "No hay rojo :v"
 
-        #cv2.imshow('frame',frame)
+        cv2.imshow('frame',frame)
         cv2.imshow('rojo',mask)
         #cv2.imshow('verde', maskGreen)
         #cv2.imshow('res',res)
@@ -135,12 +138,12 @@ upper_green = np.array([95,255,255])
 lower_blue = np.array([100,100,100])
 upper_blue = np.array([120,255,255])
 #serialCom("1")
-serialCom("1")
+#serialCom("1")
 while True:
     img = reconoce(lower_red, upper_red, lower_green, upper_green, lower_blue, upper_blue)
     cv2.imshow('Congelada', img)
     #areaRed(img)
     cv2.waitKey(10000)
     #serialCom("2")
-    serialCom("1")
+    #serialCom("1")
     cv2.destroyAllWindows()
