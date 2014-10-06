@@ -1,7 +1,7 @@
 Topicos Inteligencia Artificial
 ================
 
-<h1>Proyecto Primer Parcial</h1>
+<h3>Proyecto Primer Parcial</h3>
  
 <p>Reconocimiento de objetos mediante el uso de OpenCV</p>
 
