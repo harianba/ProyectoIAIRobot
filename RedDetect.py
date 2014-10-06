@@ -21,21 +21,13 @@ while(1):
     res = cv2.bitwise_and(frame,frame, mask= mask)
     moments = cv2.moments(mask)
     area = moments['m00']
-    """if area > 100000:
+    if area > 100000:
         print "Es azul"
     else:
         print "No es azul"
-    """
-    '''print " -----------------Frame ---------------"
-    print frame
-    print "------------------Res-----------------"
-    print  res
-    raw_input()
-    '''
- 
-    """if  res:
-        print "yes"
-        raw_input()"""
+
+    
+
  
     cv2.imshow('frame',frame)
     cv2.imshow('mask',mask)
